@@ -1,0 +1,29 @@
+<!--pages/user/user.wxml-->
+<view class="userContent">
+  <view class='big-block'>
+    <view class='user-block'>
+      <text>我的订单</text><text>></text>
+    </view>
+    <view class='user-block'>
+      <text>优惠券</text><text>></text>
+    </view>
+    <view class='user-block'>
+      <text>影院会员卡</text><text>></text>
+    </view>
+  </view>
+  <view class='big-block'>
+    <view class='user-block'>
+      <text>想看的电影</text><text>></text>
+    </view>
+    <view class='user-block'>
+      <text>看过的电影</text><text>></text>
+    </view>
+  </view>
+  <view class='footer'>
+    <text>c</text>
+    <text>猫眼电影</text>
+    <text>客户电话:</text>
+    <text>1010-5335</text>
+
+  </view>
+</view>

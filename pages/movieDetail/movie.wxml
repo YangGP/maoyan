@@ -1,0 +1,77 @@
+<!--pages/movieDetail/movie.wxml-->
+<view>
+  <view class="header">
+    <view style="background-image:url('http://127.0.0.1:3000/{{ movie.bigImg[0] }}');background-size:100% 100%" class="filterBack"></view>
+    <view class="pad">
+      <view class="head-top">
+        <image src="http://127.0.0.1:3000/{{ movie.bigImg[0] }}"></image>
+        <view class="mainCtx">
+          <text>{{ movie.CName }}</text>
+          <text>{{ movie.EName }}</text>
+          <text>{{ movie.favor }}人想看</text>
+          <text>{{ movie.type }}</text>
+          <text>{{ movie.area }}/{{ movie.duration }}min</text>
+          <text>{{ movie.releaseDate }}{{ movie.releaseArea }}</text>
+        </view>
+      </view>
+      <view class="btnBox">
+        <button size="{{mini}}">想看</button>
+        <button size="{{mini}}">评分</button>
+      </view>
+    </view>
+  </view>
+  <view class="container">
+    <view class="synopsis">
+      <text>{{ movie.synopsis }}</text>
+    </view>
+    <view id="down">
+        <icon type="download"></icon>
+    </view>
+    <view class='actorBox'>
+      <text>演职人员</text>
+      <scroll-view scroll-x class='scroll-view'>
+        <view class='actor' wx:for="{{ movie.actorImg }}" wx:key="actor{{index}}">
+          <image style='width:140rpx;height:180rpx;' src='http://127.0.0.1:3000/{{ item }}'></image>
+          <text>{{ movie.actors[index] }}</text>
+          <text wx:if="{{index==0}}">导演</text>
+          <text wx:else>演员</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='picBox'>
+      <text>视频和剧照</text>
+      <scroll-view scroll-x class='scroll-view'>
+        <view class='pic' wx:for="{{ movie.pictures }}" wx:key="pic{{index}}">
+          <image wx:if="{{index == 0}}" style='width:300rpx;height:190rpx;' src='http://127.0.0.1:3000/{{ item }}'></image>
+          <image wx:else style='width:220rpx;height:190rpx;' src='http://127.0.0.1:3000/{{ item }}'></image>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class='user-comment'>
+      <view class='comment-head'>
+        <text>观众评论</text>
+        <text class='add-button'>写短评</text>
+      </view>
+      <view class='comment'>
+        <image class='user-img' src='../../icon/name.jpg'></image>
+        <view class='commit-rgt'>
+          <text>春花在唱歌</text>
+          <text>我是雷神托尔，我啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+          <view>
+            <text>2天前</text>
+            <view>
+              <i></i>
+              <text>325</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='empty'></view>
+  <view class='footer'>
+    <navigator>优惠购票</navigator>
+  </view>
+</view>
+

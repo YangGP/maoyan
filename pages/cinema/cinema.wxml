@@ -1,0 +1,21 @@
+<!--pages/cinema/cinema.wxml-->
+<view>
+  <view class='header'>
+    <view class='header-local'>
+      <text>成都</text><view class='cart'></view>
+    </view>
+    <input class='ipt' placeholder='找影院' placeholder-class='input-placeholder'></input>
+    <icon style="position:absolute;top:35%;left:46%;z-index:3;" size="13" type="search"></icon>
+  </view>
+  <view class="cinemaBox">
+    <view class="cinemaContent" wx:for="{{ cinemas }}" wx:key="cinema{{ index }}">
+      <view class="lftCtx">
+        <text>{{ item.cinemaName }}</text>
+        <text>{{ item.address }}</text>
+      </view>
+      <text class="far">{{ index*10 }}km</text>
+    </view>
+  
+  </view>
+
+</view>

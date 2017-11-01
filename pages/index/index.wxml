@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class='header-local'>
+      <text>成都</text><view class='cart'></view>
+    </view>
+    <view bindtap="switchLab" class="header-nav">
+      <text id="onshow">热映</text>
+      <text id="upcoming">待映</text>
+    </view>
+    <view class="header-search">
+      <icon color="#d94a46" size="18" type="search"></icon>
+    </view>
+    
+  </view>
+  <view wx:if="{{ curLab }}" class="onshow">
+    <view data-id="{{ val.mid }}" class="movieContent" wx:key="onshow{{index}}" wx:for="{{ onshow }}" wx:for-item="val" bindtap="movieDetail">
+      <image class="lftCtx" src="http://127.0.0.1:3000/{{ val.bigImg[0] }}">
+      </image>
+      <view class="midCtx">
+        <text>{{ val.CName }}</text>
+        <i></i>
+        <text>{{val.type}}</text>
+        <text>主演:{{val.actors}}</text>
+        <text>今天136家影院放映2028场</text>
+      </view>
+      <view class="rhtCtx">
+        <text>{{val.score}}分</text>
+        <button size="{{ mini }}">购票</button>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="upcoming">
+    <view class="lastest">
+      <text>近期最受欢迎</text>
+      <scroll-view class="scroll-view" scroll-x style="width:100%">
+        <view class="movieTop" wx:key="upcoming{{index}}" wx:for="{{ upcoming }}" wx:for-item="val">
+          <image style="width:170rpx;height:230rpx;" src="http://127.0.0.1:3000/{{ val.bigImg[0] }}">
+          </image>
+          <text>{{ val.CName }}</text>
+          <text>{{ val.favor }}人想看</text>
+          <text>{{ val.releaseDate }}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="movieContent" wx:key="upcoming{{index}}" wx:for="{{ upcoming }}" wx:for-item="val">
+      <image class="lftCtx" src="http://127.0.0.1:3000/{{ val.bigImg[0] }}">
+      </image>
+      <view class="midCtx">
+        <text>{{ val.CName }}</text>
+        <i></i>
+        <text>{{val.type}}</text>
+        <text>主演:{{val.actors}}</text>
+        <text>今天136家影院放映2028场</text>
+      </view>
+      <view class="rhtCtx">
+        <text>{{val.score}}分</text>
+        <button size="{{ mini }}">购票</button>
+      </view>
+    </view>
+  </view>
+</view>

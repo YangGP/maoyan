@@ -1,0 +1,147 @@
+/**index.wxss**/
+.header {
+  padding-left:25rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #d7d7d7;
+  align-items: center;
+}
+.header-local {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.header-nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #636363;
+  font-weight: bold;
+}
+.header-nav>text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 88rpx;
+}
+.header-nav>text:first-child {
+  margin-right: 40rpx;
+  border-bottom: 4rpx solid #d84929;
+  color: #d84929;
+}
+
+.header-search {
+  color: #d94a46;
+  width: 90rpx;
+  height: 100%;
+  border-left: 1rpx solid #e9e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onshow {
+  padding-left: 25rpx;
+}
+.movieContent {
+  padding: 25rpx 25rpx 25rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  align-items: center;
+}
+.lftCtx {
+  width: 130rpx;
+  height: 180rpx;
+}
+.midCtx {
+  width: 425rpx;
+  margin-left: 22rpx;
+}
+.midCtx>text {
+  display: block;
+  font-size: 24rpx;
+}
+.midCtx>text:nth-child(1) {
+  margin-bottom: 17rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.midCtx>text:nth-child(3) {
+  margin-bottom: 17rpx;
+  color: #676767;
+}
+.midCtx>text:nth-child(4) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #676767;
+  margin-bottom: 17rpx;
+}
+.midCtx>text:nth-child(5) {
+  color: #a5a5a5;
+}
+.rhtCtx {
+  text-align: right;
+}
+.rhtCtx {
+  color: #ffc23d;
+}
+.rhtCtx>button {
+  font-size: 24rpx;
+  background-color: #ee4339;
+  color: #ffe8d2;
+  text-align: center;
+  margin-top: 50rpx;
+  width: 120rpx;
+}
+
+
+.lastest {
+  height: 460rpx;
+  padding: 30rpx 0 30rpx 30rpx;
+}
+.lastest>text {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.scroll-view {
+  margin-top: 25rpx;
+  display: flex;
+  white-space: nowrap;
+}
+.movieTop {
+  width: 170rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.movieTop>text {
+  display: block;
+}
+.movieTop>text:nth-child(2) {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+  color: #212121;
+  font-weight: bold;
+}
+.movieTop>text:nth-child(3) {
+  font-size: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #b9b9b9;
+  margin-top: 10rpx;
+}
+.movieTop>text:nth-child(4) {
+  font-size: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #b9b9b9;
+  margin-top: 10rpx;
+}

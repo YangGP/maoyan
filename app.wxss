@@ -1,0 +1,8 @@
+/**app.wxss**/
+.cart {
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #c6c6c6;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
