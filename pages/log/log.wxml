@@ -1,0 +1,11 @@
+<!--pages/log/log.wxml-->
+<view class='container'>
+  <view>
+    <label>账号：</label><input bindblur='getName' class='ipt'></input>
+  </view>
+  <view>
+    <label>密码：</label><input bindblur='getPsw' class='ipt' type='password'></input>
+  </view>
+  <view class='logbtn' bindtap='login'>登陆</view>
+  
+</view>

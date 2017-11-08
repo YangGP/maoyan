@@ -6,7 +6,8 @@ Page({
    */
   data: {
     mid: '',
-    movie: {}
+    movie: {},
+    isLong: false
   },
 
   /**
@@ -43,6 +44,32 @@ Page({
       return ele = ele.replace(/\\/, '/');
     })
   },
+
+
+  setscore(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    };
+    wx.navigateTo({
+      url: '../score/score?mid=' + this.data.movie._id,
+    })
+  },
+
+  godown(){
+    this.setData({
+      isLong: !this.data.isLong
+    })
+  },
+
+  gopreview(){
+    wx.navigateTo({
+      url: '../preView/preview'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,5 @@
+<!--pages/seen/seen.wxml-->
+<view class='container'>
+  <image style='width:180rpx;height:210rpx' src='../../icon/cat.jpg'></image>
+  <view>暂无看过的电影</view>
+</view>

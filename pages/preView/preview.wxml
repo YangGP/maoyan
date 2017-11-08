@@ -1,0 +1,5 @@
+<!--pages/preView/preview.wxml-->
+<view class='container'>
+  <video src='../../video/konosuba.mp4' class='video'></video>
+</view>
+

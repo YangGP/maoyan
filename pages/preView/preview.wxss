@@ -1,0 +1,4 @@
+/* pages/preView/preview.wxss */
+.video {
+  width: 100%;
+}

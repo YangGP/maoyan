@@ -1,21 +1,21 @@
 <!--pages/user/user.wxml-->
 <view class="userContent">
   <view class='big-block'>
-    <view class='user-block'>
+    <view bindtap='order' class='user-block'>
       <text>我的订单</text><text>></text>
     </view>
-    <view class='user-block'>
+    <view bindtap='discount' class='user-block'>
       <text>优惠券</text><text>></text>
     </view>
-    <view class='user-block'>
+    <view bindtap='usercard' class='user-block'>
       <text>影院会员卡</text><text>></text>
     </view>
   </view>
   <view class='big-block'>
-    <view class='user-block'>
+    <view bindtap='want' class='user-block'>
       <text>想看的电影</text><text>></text>
     </view>
-    <view class='user-block'>
+    <view bindtap='seen' class='user-block'>
       <text>看过的电影</text><text>></text>
     </view>
   </view>

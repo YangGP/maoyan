@@ -1,0 +1,27 @@
+/* pages/chioce/chioceCinema.wxss */
+.cinemaBox {
+  padding-left: 24rpx;
+}
+.cinemaContent {
+  padding: 40rpx 25rpx 40rpx 0;
+  border-bottom: 1rpx solid #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lftCtx>text {
+  display: block;
+}
+.lftCtx>text:nth-child(1) {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 25rpx;
+}
+.lftCtx>text:nth-child(2) {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+.far {
+  font-size: 20rpx;
+  color: #999;
+}

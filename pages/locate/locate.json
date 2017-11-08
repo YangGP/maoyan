@@ -1,0 +1,6 @@
+{
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#dd4038",
+  "navigationBarTitleText": "当前城市-成都",
+  "enablePullDownRefresh": true
+}

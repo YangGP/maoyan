@@ -1,0 +1,71 @@
+<!--pages/mix/mixed.wxml-->
+<view>
+  <view class='cinemaName'>
+    <view class='cinemaName-left'>
+      <text>{{ cinema.cinemaName }}</text>
+      <text>{{ cinema.address }}</text>
+    </view>
+    <view class='cinemaName-locate'>
+      <image style='width:40rpx;height:40rpx;' src='../../icon/movie_show_locate.png'></image>
+      <text>地图</text>
+    </view>
+  </view>
+  <view class='scroll-box'>
+    <view style="background-image:url({{backUrl}});background-size:100%" class="filterBack"></view>
+    <view style='{{curPosi}}' class='scroll-movie' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+      <image id='{{item._id}}' class="{{item._id==curView?'scroll-item-big':'scroll-item'}}" wx:for="{{movies}}" bindtap='touchView' src='http://127.0.0.1:3000/{{ item.bigImg[0] }}'></image>
+    </view>
+    <view class='white-cart'></view>
+  </view>
+  <view class='movie-info'>
+    <text>{{movies[curIndex].CName}}</text>
+    <text>{{movies[curIndex].favor}}想看</text>
+    <text>{{movies[curIndex].duration}}分钟 | {{movies[curIndex].type[0]}} | {{movies[curIndex].actors[0]}}</text>
+  </view>
+  <view class='sch-time'>
+    <view>今天</view>
+    <view>明天</view>
+    <view>后天</view>
+  </view>
+  <view wx:if="{{scheule.length!=0}}" class='sch-box'>
+    <view wx:for="{{scheule}}" class='sch-data'>
+      <view class='sch-data1'>
+        <text>{{item.time}}</text>
+        <text></text>
+      </view>
+      <view class='sch-data2'>
+        <text>原版3D</text>
+        <text>{{ item.projName }}</text>
+      </view>
+      <view class='sch-data3'>
+        <text>{{ item.price }}</text>
+        <text>首单特惠</text>
+      </view>
+      <view class='sch-data4'>
+        <navigator url='../getSeat/getseat?id={{item._id}}&seat={{item.seats}}&cinema={{cinema.cinemaName}}&time={{item.time}}&price={{item.price}}&projName={{item.projName}}&movie={{movies[curIndex].CName}}'>购票</navigator>
+      </view>
+    </view>
+  </view>
+  <view style='text-align:center;margin:30rpx 0' wx:else>
+      <image style='width:140rpx;height:100rpx' src='../../icon/movie_ic_no_show.png'></image>
+      <view>今日场次已售完</view>
+    </view>
+  
+
+  <view class='eat'>
+    <text>观影套餐</text>
+    <view class='eat-content'>
+      <image style='width:145rpx;height:145rpx'></image>
+      <view class='eat-right'>
+        <text>双人小吃套餐</text>
+        <text>30oz爆米花一桶+12oz可乐2杯</text>
+        <view class='eat-btm'>
+          <text>13.9元</text>
+          <text>影院价：24元</text>
+          <text>已售1281</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,13 @@
+<!--pages/chioce/chioceCinema.wxml-->
+<view>
+  <view class="cinemaBox">
+    <view class="cinemaContent" wx:for="{{ cinema }}" wx:key="cinema{{ index }}" data-cid='{{item._id}}' bindtap='buypage'>
+      <view class="lftCtx">
+        <text>{{ item.cinemaName }}</text>
+        <text>{{ item.address }}</text>
+      </view>
+      <text class="far">{{ index*10 }}km</text>
+    </view>
+  </view>
+</view>
+

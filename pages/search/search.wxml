@@ -1,0 +1,39 @@
+<!--pages/search/search.wxml-->
+<view>
+  <icon size="14" class='icon' type='search'></icon>
+  <view class='header'>
+    <input wx:if="{{!onlyCinema}}" placeholder-style="font-size:26rpx;color:#b8b8b8;" placeholder='找影院/电影' bindconfirm="searchRes"></input>
+    <input wx:else placeholder-style="font-size:26rpx;color:#b8b8b8;" placeholder='找影院' bindconfirm="searchRes"></input>
+    <text bindtap='goback'>取消</text>
+  </view>
+  <view wx:if="{{searched}}">
+    <view class="cinemaBox">
+      <view>影院</view>
+      <view class="cinemaContent" wx:for="{{ resultCinema }}" wx:key="cinema{{ index }}">
+        <view class="clftCtx">
+          <text>{{ item.cinemaName }}</text>
+          <text>{{ item.address }}</text>
+        </view>
+        <text class="cfar">{{ index*10 }}km</text>
+      </view>
+    </view>
+    <view class="onshow" wx:if="{{!onlyCinema}}">
+      <view>电影</view>
+      <view data-id="{{ item._id }}" class="movieContent" wx:key="resultMovie{{index}}" wx:for="{{ resultMovie }}"  bindtap="movieDetail">
+        <image class="lftCtx" src="http://127.0.0.1:3000/{{ item.bigImg[0] }}">
+        </image>
+        <view class="midCtx">
+          <text>{{ item.CName }}</text>
+          <text>{{ item.EName }}</text>
+          <text>{{ item.type }}</text>
+          <text>{{ item.releaseDate }}{{item.releaseArea}}上映</text>
+        </view>
+        <view class="rhtCtx">
+          <text>{{item.score}}分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  
+</view>

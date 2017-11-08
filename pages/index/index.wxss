@@ -30,6 +30,8 @@
 }
 .header-nav>text:first-child {
   margin-right: 40rpx;
+}
+.clickText {
   border-bottom: 4rpx solid #d84929;
   color: #d84929;
 }

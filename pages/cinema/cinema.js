@@ -23,9 +23,26 @@ Page({
         that.setData({
           curpage: msg.data.curpage,
           cinemas: msg.data.rows
-        })
-        
+        });
+        wx.hideLoading();
       }
+    })
+  },
+  gosearch(){
+    wx.navigateTo({
+      url: '../search/search?isCinema=' + true
+    })
+  },
+
+  getmix(e){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../mix/mixed?cid=' + e.currentTarget.dataset.id,
     })
   },
 
@@ -33,6 +50,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中'
+    });
     this.getCinemaData();
   },
 

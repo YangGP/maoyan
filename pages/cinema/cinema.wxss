@@ -46,6 +46,31 @@
 .lftCtx>text:nth-child(2) {
   font-size: 24rpx;
   color: #9b9b9b;
+  width: 580rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+}
+.lft-tips>text {
+  font-size: 22rpx;
+  padding: 0 5rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-right: 5rpx;
+  border-radius: 7rpx;
+}
+.lft-tips>text:nth-child(1) {
+  color: #589daf;
+  border: 1rpx solid #589daf;
+}
+.lft-tips>text:nth-child(2) {
+  color: #589daf;
+  border: 1rpx solid #589daf;
+}
+.lft-tips>text:nth-child(3) {
+  color: #f90;
+  border: 1rpx solid #f90;
 }
 .far {
   font-size: 20rpx;

@@ -1,0 +1,6 @@
+<!--pages/myorder/order.wxml-->
+<view class='container'>
+  <image style='width:180rpx;height:210rpx' src='../../icon/cat.jpg'></image>
+  <view>你还没有订单</view>
+</view>
+

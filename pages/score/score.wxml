@@ -1,0 +1,14 @@
+<!--pages/score/score.wxml-->
+<view class='container'>
+  <view class='tips'>
+    <text>请滑动星星评分</text>
+  </view>
+  <view class='stars' bindtap="movestar">
+    <image wx:key="star{{index}}" wx:for="{{allStar}}" data-id='{{index}}' style='width:70rpx;height:70rpx;' src='../../icon/{{item}}'></image>
+  </view>
+  <view class='comment'>
+    <textarea placeholder="快来说说你的看法吧（6-300个字）" maxlength="300" placeholder-style="font-size:30rpx;color:#d1d1d1" bindblur='gettext' value='{{text}}'>
+    </textarea>
+  </view>
+  <view class='btn' bindtap='submit'>提交</view>
+</view>

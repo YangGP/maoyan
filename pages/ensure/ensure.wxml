@@ -1,0 +1,87 @@
+<!--pages/ensure/ensure.wxml-->
+<view>
+  <view class='time'>
+    支付剩余时间： {{restTime}}
+  </view>
+
+  <view class='main-msg'>
+    <view class='main-top'>
+      <view>{{movie}}</view>
+      <view>
+        <text>今天11-06</text>
+        <text>{{time}}</text>
+        <text>（英语3D）</text>
+      </view>
+      <view>
+        <text>{{cinema}}</text>
+        <text>{{projName}}</text>
+      </view>
+      <view>
+        <text wx:for="{{selectedSeat}}">{{item.x}}排{{item.y}}座</text>
+      </view>
+    </view>
+    <view class='main-btm'>
+      <text>票价</text>
+      <view>
+        <text>含服务费4元/张</text>
+        <text>{{(price-0+4)*selectedSeat.length}}元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='good'>
+    <view class='good-box'>
+      <text>折扣卡</text>
+      <view class='good-box-one'>
+        <text>办理折扣卡，首单立减8元</text>
+        <text>去开卡</text>
+        <text>></text>
+      </view>
+    </view>
+    <view class='good-box'>
+      <text>活动和优惠券</text>
+      <view class='good-box-two'>
+        <text>无可用</text>
+        <text>></text>
+      </view>
+    </view>
+  </view>
+
+  <view class='notice'>
+    <view class='notice-box'>
+      <text class='notice-box-head'>退改签通知</text>
+    </view>
+    <view class='notice-box'>
+      <text class='notice-box-mid'>开场时间24小时前，可免费改签</text>
+      <text class='notice-box-mid'>开场时间60分钟前，改签手续费3.0元/张</text>
+    </view>
+  </view>
+
+  <view class='phone'>
+    <view class='phone-box'>
+      <text class='phone-box-head'>手机号</text>
+      <text class='phone-box-head'>13512345678</text>
+    </view>
+    <view class='phone-box'>
+      <text class='phone-box-mid'>手机号仅用于生成订单，取票码不再以短信发送</text>
+    </view>
+  </view>
+
+
+
+  <view class='empty'></view>
+  <view class='pay-box'>
+    <view class='pay-tip'>
+      <view class='pay-tip-lft'>
+        <text>该场次已超出改签时限</text>
+        <text>该场次已超出退票时限</text>
+      </view>
+      <view class='pay-tip-rgt'>
+        <text>还需支付:</text>
+        <text>{{(price-0+4)*selectedSeat.length}}</text>
+        <text>元</text>
+      </view>
+    </view>
+    <view class='pay-btn' bindtap='ensurePay'>确认支付</view>
+  </view>
+</view>

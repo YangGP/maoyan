@@ -4,28 +4,32 @@
     <view style="background-image:url('http://127.0.0.1:3000/{{ movie.bigImg[0] }}');background-size:100% 100%" class="filterBack"></view>
     <view class="pad">
       <view class="head-top">
-        <image src="http://127.0.0.1:3000/{{ movie.bigImg[0] }}"></image>
+        <image bindtap='gopreview' src="http://127.0.0.1:3000/{{ movie.bigImg[0] }}"></image>
         <view class="mainCtx">
           <text>{{ movie.CName }}</text>
           <text>{{ movie.EName }}</text>
-          <text>{{ movie.favor }}人想看</text>
+          <text class='movie-favor' wx:if="{{movie.isUpcoming}}">{{ movie.favor }}人想看</text>
+          <view class='movie-score' wx:else>
+            <image wx:for="{{[1,2,3,4,5]}}" src='../../icon/selected.png' style='width:30rpx;height:30rpx'></image>
+            <text>{{movie.score}}分</text>
+          </view>
           <text>{{ movie.type }}</text>
           <text>{{ movie.area }}/{{ movie.duration }}min</text>
           <text>{{ movie.releaseDate }}{{ movie.releaseArea }}</text>
         </view>
       </view>
       <view class="btnBox">
-        <button size="{{mini}}">想看</button>
-        <button size="{{mini}}">评分</button>
+        <view class='btn'><image src='../../icon/ic_movie_wish_unselected.png'></image>想看</view>
+        <view class='btn' bindtap='setscore'><image src='../../icon/mycomment_star_share_empty.png'></image>评分</view>
       </view>
     </view>
   </view>
   <view class="container">
-    <view class="synopsis">
+    <view class="{{isLong?'synopsis long':'synopsis'}}">
       <text>{{ movie.synopsis }}</text>
     </view>
-    <view id="down">
-        <icon type="download"></icon>
+    <view class="down" bindtap='godown'>
+        <icon class="{{isLong?'transform downicon':'downicon'}}" type="download"></icon>
     </view>
     <view class='actorBox'>
       <text>演职人员</text>
@@ -51,14 +55,14 @@
     <view class='user-comment'>
       <view class='comment-head'>
         <text>观众评论</text>
-        <text class='add-button'>写短评</text>
+        <text class='add-button' bindtap='setscore'>写短评</text>
       </view>
-      <view class='comment'>
+      <view wx:for="{{movie.userSay}}" class='comment'>
         <image class='user-img' src='../../icon/name.jpg'></image>
         <view class='commit-rgt'>
-          <text>春花在唱歌</text>
-          <text>我是雷神托尔，我啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
-          <view>
+          <text>{{item.name}}</text>
+          <text>{{item.say}}</text>
+          <view class='commit-btm'>
             <text>2天前</text>
             <view>
               <i></i>
@@ -67,11 +71,39 @@
           </view>
         </view>
       </view>
+      <view class='showall'>
+        <text>查看所有用户评论</text>
+      </view>
     </view>
+
+    <view class='pro-comment'>
+      <view class='comment-head'>
+        <text>观众评论</text>
+        <text class='add-button'>写短评</text>
+      </view>
+      <view class='comment'>
+        <image class='user-img' src='../../icon/name.jpg'></image>
+        <view class='commit-rgt'>
+          <text>春花在唱歌</text>
+          <text>我是雷神托尔，我啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+          <view class='commit-btm'>
+            <text>2天前</text>
+            <view>
+              <i></i>
+              <text>325</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='showall'>
+        <text>查看所有专业评论</text>
+      </view>
+    </view>
+
   </view>
-  <view class='empty'></view>
-  <view class='footer'>
-    <navigator>优惠购票</navigator>
+  <view wx:if="{{!movie.isUpcoming}}" class='empty'></view>
+  <view wx:if="{{!movie.isUpcoming}}" class='footer'>
+    <navigator url="../chioce/chioceCinema?id={{movie._id}}&name={{movie.CName}}">优惠购票</navigator>
   </view>
 </view>
 

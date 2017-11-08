@@ -8,6 +8,61 @@ Page({
   
   },
 
+  usercard(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../userCard/userCard'
+    })
+  },
+  discount(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../discount/discount'
+    })
+  },
+  order(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../myorder/order'
+    })
+  },
+  want(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../want/want'
+    })
+  },
+  seen(){
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '../log/log',
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../seen/seen'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

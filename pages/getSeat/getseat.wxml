@@ -1,0 +1,55 @@
+<!--pages/getSeat/getseat.wxml-->
+<view>
+  <view class='header'>
+    <view class='info'>
+      <text>{{ciname}}</text>
+      <text>{{time}}</text>
+      <text>英语3D</text>
+    </view>
+    <view class='seat-icon-box'>
+      <view>
+        <image  src='../../icon/movie_ic_can_select_small.png' style='width:36rpx;height:36rpx'></image>
+        <text>可选</text>
+      </view>
+      <view>
+        <image src='../../icon/movie_ic_saled_big.png' style='width:36rpx;height:36rpx'></image>
+        <text>不可选</text>
+      </view>
+      <view>
+        <image src='../../icon/movie_ic_selected_big.png' style='width:36rpx;height:36rpx'></image>
+        <text>已选</text>
+      </view>
+    </view>
+  </view>
+  <view class='seat-map'>
+
+  </view>
+  <movable-area class="move-box" style="height:770rpx;width:750rpx">
+    <view class='sch-name'></view>
+    <movable-view out-of-bounds style="height:500%;width:500%;position:relative" x="{{x}}" y="{{y}}" direction="all">
+      <view class='seat-box' bindtap='getSeat'>
+        <view style='width:100rpx;margin:0 auto 10rpx;font-size:18rpx'>银幕中央</view>
+        <view style='width:100%;margin:0 auto'>
+          <view class='seat-item-row' wx:for="{{seats}}" wx:for-index="x">
+            <image wx:key="{{x}}{{y}}" class='seat-item' wx:for="{{item}}" wx:for-item="ele" data-id='{{x+1}},{{y+1}},{{ele}}' wx:for-index="y" src='{{seatState[ele]}}'></image>
+          </view>
+        </view>
+      </view>
+    </movable-view>
+  </movable-area>
+  <view class='footer'>
+    <view class='footer-content' wx:if="{{!selected}}">
+      <text>推荐座位</text>
+      <view wx:for="{{[1,2,3,4]}}" data-i='{{index+1}}' bindtap='autoSeat' class='people'>{{item}}人</view>
+    </view>
+    <view class='footer-content' wx:else bindtap='delseat'>
+      <view data-id='{{item.x}},{{item.y}}' class='people-b' wx:for="{{selectedSeat}}">{{item.x-0}}排{{item.y-0}}座</view>
+    </view>
+    <view class='footer-buy'>
+      <text wx:if="{{!selected}}">一次最多购买4张</text>
+      <text wx:else>总价：{{total}}元</text>
+      <view class='unselect' wx:if="{{!selected}}">请先选座</view>
+      <view class='select' wx:else bindtap='buyticket'>点击购票</view>
+    </view>
+  </view>
+</view>

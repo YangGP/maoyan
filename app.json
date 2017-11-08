@@ -3,7 +3,21 @@
     "pages/index/index",
     "pages/cinema/cinema",
     "pages/user/user",
-    "pages/movieDetail/movie"
+    "pages/movieDetail/movie",
+    "pages/chioce/chioceCinema",
+    "pages/mix/mixed",
+    "pages/locate/locate",
+    "pages/search/search",
+    "pages/userCard/userCard",
+    "pages/discount/discount",
+    "pages/score/score",
+    "pages/preView/preview",
+    "pages/getSeat/getseat",
+    "pages/ensure/ensure",
+    "pages/log/log",
+    "pages/myorder/order",
+    "pages/want/want",
+    "pages/seen/seen"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,5 +49,8 @@
         "selectedIconPath": "icon/user_1.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 10000
   }
 }

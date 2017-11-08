@@ -1,0 +1,26 @@
+/* pages/userCard/userCard.wxss */
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.container>image {
+  margin-top: 380rpx;
+  margin-bottom: 40rpx;
+}
+.container>view:nth-child(2) {
+  font-size: 32rpx;
+  margin-bottom: 44rpx;
+}
+.container>view:nth-child(3) {
+  width: 381rpx;
+  height: 81rpx;
+  border: 2rpx solid #ca5244;
+  color: #ca5244;
+  font-size: 32rpx;
+  line-height: 81rpx;
+  margin: 0 auto;
+}

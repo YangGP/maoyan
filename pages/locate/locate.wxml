@@ -1,0 +1,22 @@
+<!--pages/locate/locate.wxml-->
+<view>
+  <view class='located'>
+    <view class='locate-title'>定位城市</view>
+    <view class='locate-city'>
+      <view class='city'>成都</view>
+    </view>
+  </view>
+  <view class='located'>
+    <view class='locate-title'>热门城市</view>
+    <view class='locate-city'>
+      <view wx:for="{{ hots }}" class='city'>{{item}}</view>
+    </view>
+  </view>
+  <view wx:for="{{all}}" class='located'>
+    <view class='locate-title'>{{item.first}}</view>
+    <view class='locate-city-box'>
+      <view wx:for="{{ item.name }}" wx:for-item="city" class='city-line'>{{city}}</view>
+    </view>
+  </view>
+
+</view>

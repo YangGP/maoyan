@@ -1,0 +1,6 @@
+<!--pages/userCard/userCard.wxml-->
+<view class='container'>
+  <image style='width:180rpx;height:210rpx' src='../../icon/cat.jpg'></image>
+  <view>你还没有影院会员卡</view>
+  <view>开通更多影院会员卡</view>
+</view>

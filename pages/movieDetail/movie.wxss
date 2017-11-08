@@ -10,7 +10,7 @@ page {
   position: absolute;
   width: 100%;
   height: 100%;
-  filter: blur(6px);
+  filter: blur(10px);
   z-index: -1;
 }
 .pad {
@@ -27,6 +27,12 @@ page {
 .mainCtx {
   margin-left: 30rpx;
 }
+.mainCtx>text {
+  display: block;
+  font-size: 24rpx;
+  color: #a2a8ab;
+  margin-bottom: 10rpx;
+}
 .mainCtx>text:nth-child(1) {
   font-size: 34rpx;
   color: white;
@@ -36,23 +42,29 @@ page {
   color: white;
   margin-bottom: 25rpx;
 }
-.mainCtx>text:nth-child(3) {
+.mainCtx .movie-favor {
   font-size: 32rpx;
   color: #ffc600;
   margin-bottom: 3rpx;
 }
-.mainCtx>text {
-  display: block;
-  font-size: 24rpx;
-  color: #a2a8ab;
-  margin-bottom: 10rpx;
+.mainCtx .movie-score {
+  font-size: 32rpx;
+  color: yellow;
+  margin-bottom: 3rpx;
 }
+.movie-score>text {
+  margin-left: 10rpx;
+}
+
 .btnBox {
   display: flex;
   justify-content: space-around;
   margin-bottom: 24rpx;
 }
-.btnBox>button {
+.btnBox>.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 335rpx;
   height: 60rpx;
   background-color: rgba(255,255,255,.5);
@@ -60,6 +72,11 @@ page {
   font-size: 26rpx;
   margin-top: 30rpx;
   border: 1rpx solid #ddd;
+  border-radius: 7rpx;
+}
+.btn>image {
+  width: 30rpx;
+  height: 30rpx;
 }
 
 .synopsis {
@@ -68,6 +85,10 @@ page {
   height: 150rpx;
   overflow: hidden;
   background-color: white;
+  transition: all linear .5s;
+}
+.long {
+  height: 350rpx;
 }
 .synopsis>text {
   font-size: 30rpx;
@@ -75,7 +96,13 @@ page {
   text-overflow: clip;
   overflow: hidden;
 }
-#down {
+.downicon {
+  transition: all linear .5s;
+}
+.transform {
+  transform: rotateX(180deg);
+}
+.down {
   text-align: center;
   width: 100%;
   background-color: white;
@@ -134,16 +161,23 @@ page {
 }
 .user-comment {
   margin-top: 20rpx;
-  padding:0 30rpx;
+  background-color: white;
+  border-top: 1rpx solid #d8d8d8;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.pro-comment {
+  margin-top: 20rpx;
+  padding:0 10rpx 0 30rpx;
   background-color: white;
   border-top: 1rpx solid #d8d8d8;
   border-bottom: 1rpx solid #d8d8d8;
 }
 .comment-head {
-  padding: 20rpx 0;
+  padding:20rpx 10rpx 20rpx 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: #e5e5e5 solid 1rpx;
 }
 .comment-head>text {
   font-size: 26rpx;
@@ -160,17 +194,51 @@ page {
 }
 
 .comment {
+  padding:30rpx 10rpx 0 30rpx;
   display: flex;
-  padding-right: 10rpx;
+  padding-top: 30rpx;
 }
 .commit-rgt {
   width: 625rpx;
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1rpx solid #c8c8c8;
+}
+.commit-rgt>text {
+  display: block;
+}
+.commit-rgt>text:nth-child(1) {
+  font-size: 24rpx;
+  color: #333;
+}
+.commit-rgt>text:nth-child(2) {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: #333;
 }
 .user-img {
   width:60rpx;
   height:60rpx;
   border: 1px solid transparent;
   border-radius: 30rpx;
+}
+.commit-btm {
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20rpx;
+  color: #999;
+}
+.showall {
+  font-size: 30rpx;
+  color: red;
+  height: 100rpx;
+  border-top: #e5e5e5 solid 1rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
